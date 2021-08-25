@@ -1,0 +1,13 @@
+footer {
+  font-size: 14px;
+  margin-top: -25px;
+}
+
+footer a {
+  color: #9b5923;
+}
+
+footer a:hover {
+  color: #ffffff;
+  transition: all 200ms ease-in;
+}
