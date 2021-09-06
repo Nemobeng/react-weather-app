@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Puff } from "react-loading-icons";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -84,11 +85,12 @@ export default function Weather(props) {
     axios.get(apiUrl).then(handleResponse);
 
     return (
-      <p>
-        Loading...
+      <div className="loading">
+        <Puff stroke="#500909" />
+        <p>Loading...</p>
         <br />
         <br />
-      </p>
+      </div>
     );
   }
 }
