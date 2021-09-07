@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Puff } from "react-loading-icons";
+import FormattedDate from "./FormattedDate";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -9,7 +10,7 @@ export default function Weather(props) {
   function handleResponse(response) {
     setWeatherData({
       ready: true,
-      date: "Tuesday, 14:38",
+      date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       city: response.data.name,
       description: response.data.weather[0].description,
@@ -30,7 +31,7 @@ export default function Weather(props) {
                   type="search"
                   placeholder="Enter city name"
                   className="form-control"
-                  autocomplete="off"
+                  autoComplete="off"
                 />
               </div>
 
@@ -54,7 +55,9 @@ export default function Weather(props) {
             <div className="col-7">
               <h1>{weatherData.city}</h1>
               <ul>
-                <li>{weatherData.date}</li>
+                <li>
+                  <FormattedDate date={weatherData.date} />
+                </li>
                 <li className="text-capitalize">{weatherData.description}</li>
               </ul>
 
