@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Puff } from "react-loading-icons";
-import FormattedDate from "./FormattedDate";
 import "./Weather.css";
+import WeatherInfo from "./WeatherInfo";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -50,35 +50,7 @@ export default function Weather(props) {
               </div>
             </div>
           </form>
-
-          <div className="row">
-            <div className="col-7">
-              <h1>{weatherData.city}</h1>
-              <ul>
-                <li>
-                  <FormattedDate date={weatherData.date} />
-                </li>
-                <li className="text-capitalize">{weatherData.description}</li>
-              </ul>
-
-              <h2>
-                <span className="temperature">
-                  {Math.round(weatherData.temperature)}
-                </span>
-                <span className="units">°C</span>
-              </h2>
-              <img
-                src={weatherData.iconUrl}
-                alt={weatherData.description}
-                width="225px"
-              />
-              <ul className="description">
-                <li>Humidity: {weatherData.humidity}%</li>
-                <li>Wind: {Math.round(weatherData.wind)}km/h</li>
-              </ul>
-            </div>
-            <div class="col-5" id="forecast"></div>
-          </div>
+          <WeatherInfo data={weatherData} />
         </div>
       </div>
     );
