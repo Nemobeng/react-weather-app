@@ -68,6 +68,15 @@ h2 {
   right: -3px;
 }
 
+.units a {
+  text-decoration: none;
+  color: rgba(161, 70, 0, 0.842);
+}
+
+canvas {
+  margin: 40px;
+}
+
 .description {
   font-size: 13px;
   background: rgba(236, 193, 160, 0.8);
