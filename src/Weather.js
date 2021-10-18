@@ -3,6 +3,7 @@ import axios from "axios";
 import { Puff } from "react-loading-icons";
 import "./Weather.css";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -42,7 +43,7 @@ export default function Weather(props) {
         <div className="weather-app">
           <form onSubmit={handleSubmit}>
             <div className="row">
-              <div className="col-6">
+              <div className="col-9">
                 <input
                   type="search"
                   placeholder="Enter city name"
@@ -55,19 +56,18 @@ export default function Weather(props) {
               <div className="col-3">
                 <input type="submit" value="Search" className="form-control" />
               </div>
-
-              <div className="col-3">
-                <button
-                  type="button"
-                  className="btn btn-outline-danger w-100"
-                  id="current-button"
-                >
-                  Current
-                </button>
-              </div>
             </div>
           </form>
-          <WeatherInfo data={weatherData} />
+
+          <div className="row">
+            <div className="col-7">
+              <WeatherInfo data={weatherData} />
+            </div>
+          </div>
+
+          <div className="col-5">
+            <WeatherForecast />
+          </div>
         </div>
       </div>
     );
