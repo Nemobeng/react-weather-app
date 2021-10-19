@@ -1,0 +1,21 @@
+.WeatherForecast-icon {
+  position: relative;
+  top: 40px;
+  left: 8px;
+}
+
+.WeatherForecast {
+  border-radius: 10px;
+  background: rgba(236, 193, 160, 0.6);
+  font-size: 15px;
+  padding: 20px;
+}
+
+.WeatherForecast-temperature-max {
+  font-size: 13px;
+}
+
+.WeatherForecast-temperature-min {
+  font-size: 13px;
+  opacity: 0.8;
+}

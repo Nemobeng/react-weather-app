@@ -74,7 +74,13 @@ h2 {
 }
 
 canvas {
-  margin: 40px;
+  margin-top: -45px;
+  margin-bottom: 30px;
+}
+
+.WeatherInfo-icon {
+  margin-top: 100px;
+  margin-bottom: 10px;
 }
 
 .description {
