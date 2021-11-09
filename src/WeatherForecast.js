@@ -13,7 +13,19 @@ export default function WeatherForecast(props) {
   }
 
   if (loaded) {
-    return <WeatherForecastDay data={forecast[0]} />;
+    return (
+      <div>
+        {forecast.map(function (dailyForecast, index) {
+          if (0 < index && index < 6) {
+            return (
+              <div key={index}>
+                <WeatherForecastDay data={dailyForecast} />
+              </div>
+            );
+          }
+        })}
+      </div>
+    );
   } else {
     const apiKey = "5e0fcc58c082e36d858a395f2ca04597";
     let latitude = props.coordinates.lat;

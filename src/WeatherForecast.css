@@ -9,6 +9,7 @@
   background: rgba(236, 193, 160, 0.6);
   font-size: 15px;
   padding: 20px;
+  margin-bottom: 26px;
 }
 
 .WeatherForecast-temperature-max {
