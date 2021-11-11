@@ -9,7 +9,7 @@ export default function Footer() {
         <a
           href="https://www.linkedin.com/in/nermine-obeng-62047a171/"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           Nermine Obeng
         </a>{" "}
@@ -17,7 +17,7 @@ export default function Footer() {
         <a
           href="https://github.com/Nemobeng/react-weather-app"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           {" "}
           GitHub.
@@ -26,7 +26,7 @@ export default function Footer() {
         <a
           href="https://eager-fermat-c8375d.netlify.app/"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           Netlify.
         </a>
