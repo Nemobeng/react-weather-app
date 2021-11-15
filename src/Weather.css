@@ -62,15 +62,10 @@ h2 {
 .units {
   font-size: 15px;
   text-decoration: none;
-  color: rgba(241, 168, 112, 0.842);
+  color: rgb(80, 9, 9);
   position: relative;
   bottom: 33px;
   right: -3px;
-}
-
-.units a {
-  text-decoration: none;
-  color: rgba(161, 70, 0, 0.842);
 }
 
 canvas {

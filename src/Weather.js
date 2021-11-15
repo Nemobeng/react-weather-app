@@ -10,7 +10,6 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
-    console.log(response.data);
     setWeatherData({
       ready: true,
       coordinates: response.data.coord,
@@ -39,13 +38,27 @@ export default function Weather(props) {
     setCity(event.target.value);
   }
 
+  function showPosition(position) {
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+    let apiKey = "5e0fcc58c082e36d858a395f2ca04597";
+    let apiUrlLoc = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+
+    axios.get(apiUrlLoc).then(handleResponse);
+  }
+
+  function getCurrentPosition(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(showPosition);
+  }
+
   if (weatherData.ready) {
     return (
       <div className="weather-app-wrapper">
         <div className="weather-app">
           <form onSubmit={handleSubmit}>
             <div className="row">
-              <div className="col-9">
+              <div className="col-6">
                 <input
                   type="search"
                   placeholder="Enter city name"
@@ -56,6 +69,14 @@ export default function Weather(props) {
               </div>
               <div className="col-3">
                 <input type="submit" value="Search" className="form-control" />
+              </div>
+              <div className="col-3">
+                <input
+                  type="submit"
+                  value="Current"
+                  className="form-control"
+                  onClick={getCurrentPosition}
+                />
               </div>
             </div>
           </form>
